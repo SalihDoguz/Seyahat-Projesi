@@ -1,0 +1,17 @@
+﻿using EntityLayer.Concrete;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BusinessLayer.Abstract
+{
+    public interface IDestinationService:IGenericService<Destination>
+    {
+        public List<Destination> GetDestinationByCity(int id);
+        public List<Destination> ListDestination();
+        public List<Destination> GetLast4Destinations();
+        public Destination GetDestinationByID(int id);
+    }
+}

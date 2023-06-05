@@ -1,0 +1,45 @@
+﻿@model Reservation
+@{
+    ViewData["Title"] = "DestinationDetails";
+    Layout = "~/Views/Shared/_MemberLayout.cshtml";
+}
+
+<style>
+    .cityImage {
+        height: 100px !important;
+        width: auto !important;
+    }
+</style>
+
+<div class="card">
+    <h3 class="card-header">Rezervasyon Detayları</h3>
+    <div class="card-body">
+        <br />
+        <div class="row h6 align-items-center">
+            <div class="col-3">
+                Rezervasyon Yapılan Şehir:
+                <div class="mt-2" style="zoom: 110%;">
+                    <img src="@Model.Destination.Image" class="img-thumbnail rounded cityImage" /> &nbsp; <a href="/Destination/DestinationDetails/@Model.DestinationID">@Model.Destination.City.CityName</a>
+                </div>
+            </div>
+            <div class="col-3 text-center">
+                Rezervasyon Yapılma Tarihi:<br />
+                <h3 class="text-bold text-primary">@Model.ReservationDate.ToString("dd.MM.yyyy [HH:mm]")</h3>
+            </div>
+            <div class="col-3 text-center">
+                Kişi Sayısı:<br />
+                <h3 class="text-bold text-success"><b>@Model.PersonCount</b></h3>
+            </div>
+            <div class="col-3 text-center">
+                Rezervasyon Durumu:<br />
+                <h3 class="text-bold text-info">@Model.ReservationStat</h3>
+            </div>
+        </div>
+        <br />
+        <div class="container-fluid" style="zoom: 120%;">
+            <h4>Notlar: </h4>
+            <br />
+            <p>@Model.Description</p>
+        </div>
+    </div>
+</div>
